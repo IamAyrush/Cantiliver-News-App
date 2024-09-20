@@ -7,7 +7,7 @@ const NewsBoard = ({category,country,query}) => {
   const deFaultImgURL='https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     function getData(){
     useEffect(()=>{
-      let url = `https://newsapi.org/v2/top-headlines?category=${category}&country=${country}&apiKey=f80f79b14ffd4502a7a98ca0e11d2731`
+      let url = `https://newsapi.org/v2/top-headlines?category=${category}&country=${country}&apiKey=${import.meta.env.VITE_API_KEY}`
      fetch(url)
       .then(response=>response.json()).then(data=>setArticals(data.articles.slice(0,40)));
   
